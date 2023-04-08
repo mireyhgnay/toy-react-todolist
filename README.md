@@ -42,4 +42,4 @@ npm start
 
 ## My Study Note
 
-[✔️ ]()
+[✔️ 고유한 id 라이브러리 사용하여 설정하기 - uuid]()
