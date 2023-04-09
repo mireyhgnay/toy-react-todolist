@@ -5,7 +5,7 @@ import styles from "./Todo.module.css";
 // 리스트 컴포넌트
 // 체크박스 / 텍스트 / 삭제버튼 이 모두 들어가는 Todo Component
 export default function Todo({ todo, onUpdate, onDelete }) {
-  const { text, status } = todo;
+  const { id, text, status } = todo;
   const handleChange = (e) => {
     const status = e.target.checked ? "completed" : "active";
     onUpdate({ ...todo, status });
@@ -16,11 +16,11 @@ export default function Todo({ todo, onUpdate, onDelete }) {
       <input
         className={styles.checkbox}
         type="checkbox"
-        id="checkbox"
+        id={id}
         checked={status === "completed"}
         onChange={handleChange}
       />
-      <label htmlFor="checkbox" className={styles.text}>
+      <label htmlFor={id} className={styles.text}>
         {text}
       </label>
       <span className={styles.icon}>
