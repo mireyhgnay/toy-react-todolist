@@ -23,7 +23,7 @@ npm start
 
 <br>
 
-**🔗 Deploy 👉**
+**🔗 Deploy https://hyerimiya-todolist.netlify.app/👉**
 
 <br>
 
