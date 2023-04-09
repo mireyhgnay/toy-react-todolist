@@ -19,11 +19,9 @@ export default function Todo({ todo, onUpdate, onDelete }) {
         onChange={handleChange}
       />
       <label htmlFor="checkbox">{text}</label>
-      <span>
-        <button onClick={handleDelete}>
-          <FaTrashAlt />
-        </button>
-      </span>
+      <button onClick={handleDelete}>
+        <FaTrashAlt />
+      </button>
     </li>
   );
 }
