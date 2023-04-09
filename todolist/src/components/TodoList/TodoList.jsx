@@ -24,12 +24,6 @@ export default function TodoList({ filter }) {
 
   // filtered 된 애들만 보여주는 함수
   const filtered = getFilteredItems(todos, filter);
-  function getFilteredItems(todos, filter) {
-    if (filter === "all") {
-      return todos;
-    }
-    return todos.filter((todo) => todo.status === filter);
-  }
 
   return (
     <section>
@@ -46,4 +40,11 @@ export default function TodoList({ filter }) {
       <AddTodo onAdd={handleAdd} />
     </section>
   );
+}
+
+function getFilteredItems(todos, filter) {
+  if (filter === "all") {
+    return todos;
+  }
+  return todos.filter((todo) => todo.status === filter);
 }
