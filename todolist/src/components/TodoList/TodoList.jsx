@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AddTodo from "../AddTodo/AddTodo";
 import Todo from "../Todo/Todo";
 
-export default function TodoList() {
+export default function TodoList({ filter }) {
   // todos : 해야할 일 전체를 담고있는 데이터
   // setTodos : 담고있는 그 데이터를 변경하고 업데이트
   const [todos, setTodos] = useState([
@@ -22,10 +22,19 @@ export default function TodoList() {
   const handleDelete = (deleted) =>
     setTodos(todos.filter((t) => t.id !== deleted.id));
 
+  // filtered 된 애들만 보여주는 함수
+  const filtered = getFilteredItems(todos, filter);
+  function getFilteredItems(todos, filter) {
+    if (filter === "all") {
+      return todos;
+    }
+    return todos.filter((todo) => todo.status === filter);
+  }
+
   return (
     <section>
       <ul>
-        {todos.map((item) => (
+        {filtered.map((item) => (
           <Todo
             key={item.id}
             todo={item}
